@@ -1,11 +1,12 @@
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
-function Search() {
+function Search({handleSearch,itemSearched,displaySearchItem}) {
   return (
-    <form className='header--search'>
-      <input type="search" name="search" id="search" className='search--input' />
-      <button type="submit" className='search--btn'><FaSearch/> </button>
-    </form>
+    <div className='header--search'>
+      <input type="search" name="search" id="search" className='search--input' onChange={handleSearch}/>
+      <button type="submit" className='search--btn'
+      onClick={()=> displaySearchItem(itemSearched)}><FaSearch/> </button>
+    </div>
   )
 }
 

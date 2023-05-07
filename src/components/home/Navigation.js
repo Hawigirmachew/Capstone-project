@@ -1,23 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
-function Navigation() {
+function Navigation({ options, handleSelectedSnapshot }) {
   return (
     <nav className="navBar">
       <ul className="navList">
-        <li className="navItems" >
-          <a href="/">Mountain</a>
-        </li>
-
-        <li className="navItems">
-          <a href="/">Beaches</a>
-        </li>
-        <li className="navItems">
-          <a href="/">Birds</a>
-        </li>
-        <li className="navItems">
-          <a href="/">Food</a>
-        </li>
+        {options.map((option) => (
+          <li className="navItems" key={option.id}>
+            <button onClick={handleSelectedSnapshot} value={option.active}>
+              {option.active.charAt(0).toUpperCase() + option.active.slice(1)}
+            </button>
+          </li>
+        ))}
       </ul>
     </nav>
   );
