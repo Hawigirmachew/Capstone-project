@@ -47,25 +47,32 @@ a {
   color: #ffffff;
   background-color: rgb(27, 20, 20);
 }
+.error-message{
+  margin-top: 1rem;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  /* background-color: red; */
+}
 /* navigation */
-.navBar {
+.navBtn {
   margin-top: 1.2rem;
 }
-.navList {
+.navBtn-list {
   width: 34%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
-.navItems {
+.navBtn-item {
   max-width: 100px;
   width: 100%;
   border-radius: 5px;
   padding: 10px;
   background-color: rgb(27, 20, 20);
 }
-.navItems button{
+.navBtn-item button{
   border: none;
   outline: none;
   cursor: pointer;
@@ -114,22 +121,41 @@ a {
   height: 192px;
   width: 100%;
 }
+/* popup */
+.popup{
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background-color: rgb(0,0,0,0.3);
+}
+.inner-popup{
+   padding: 25px;
+   position: relative;
+}
+.popup-close{
+   border: none;
+   background-color: red;
+   padding: 5px;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
 
 /* media query */
 @media screen and (max-width: 768px) {
   .container {
     max-width: 650px;
   }
-  .navBar {
+  .navBtn {
     display: flex;
     justify-content: center;
   }
   /* navigation */
-  .navList {
+  .navBtn-list {
     width: fit-content;
     gap: 0.5rem;
   }
-  .navItems {
+  .navBtn-item {
     padding: 8px;
   }
   .item{
