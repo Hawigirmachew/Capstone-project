@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // components
-import NavigationButtons from "./components/home/NavigationButtons";
-import Popup from "./components/home/Popup";
-import Post from "./components/home/Post";
-import Search from "./components/home/Search";
-import Title from "./components/home/Title";
 // data
 import snapshot from "./utils/Data";
 import "./index.css";
-import SearchedItem from "./components/home/SearchedItem";
+
+import NavBar from "./components/home/NavBar";
+import Home from "./pages/Home";
+import About from './pages/About'
 // import { useState } from "react";
 function App() {
   // isLoading
@@ -47,63 +45,26 @@ function App() {
   };
 
   // popup
-  const [timePopup, setTimePopup] = useState(false)
-  useEffect(() => {
-    setTimeout(() =>{
-      setTimePopup(true)
-    },3000)
-  },[timePopup])
+ 
   return (
     <BrowserRouter>
-      <div className="container">
-        <header className="header">
-          <Popup timePopup = {timePopup} setTimePopup = {setTimePopup}/>
-          <Title />
-          <Search
-            handleSearch={handleSearch}
-            itemSearched={itemSearched}
-            displaySearchItem={displaySearchItem}
-          />
-         
-        </header>
-        <main>
+    <NavBar/>
+     <main className="container">
 
-          {itemSearched  && itemFound ? (
-            <SearchedItem item={itemFound} />
-          ) : (
-            <div className="error-message">{message}</div>
-          )}
-           <NavigationButtons
-            options={options}
-            handleSelectedSnapshot={handleSelectedSnapshot}
-          />
-          {active === "all" && <Post snapshot={snapshot} />}
-          {active === "mountain" && (
-            <Post
-              snapshot={snapshot.filter((snap) => snap.type === "mountain")}
-              type="Mountains"
-            />
-          )}
-          {active === "beach" && (
-            <Post
-              snapshot={snapshot.filter((snap) => snap.type === "beach")}
-              type="Beaches"
-            />
-          )}
-          {active === "bird" && (
-            <Post
-              snapshot={snapshot.filter((snap) => snap.type === "bird")}
-              type="Birds"
-            />
-          )}
-          {active === "food" && (
-            <Post
-              snapshot={snapshot.filter((snap) => snap.type === "food")}
-              type="Foods"
-            />
-          )}
-        </main>
-      </div>
+     <Routes>
+      <Route path="/" element = {<Home handleSearch= {handleSearch}
+      itemSearched = {itemSearched}
+      displaySearchItem={displaySearchItem}
+      itemFound={itemFound}
+      active={active}
+      options={options}
+      handleSelectedSnapshot={handleSelectedSnapshot}
+      snapshot={snapshot}
+      message={message}
+      />}/>
+      <Route path="/about" element = {<About />}/>
+     </Routes>
+     </main>
     </BrowserRouter>
   );
 }
