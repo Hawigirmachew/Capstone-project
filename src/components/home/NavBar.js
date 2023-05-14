@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({navref}) {
   // const [sticky, setSticky] = useState(false);
   // //
   // useEffect(() => {
@@ -13,8 +13,8 @@ function NavBar() {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
   return (
-    <nav className='stickye'>
-      <ul className="navList">
+    <nav className='sticky' >
+      <ul className="navList" ref={navref}>
         <li className="navList-item">
           <Link to="/">Home</Link>
         </li>
@@ -22,11 +22,9 @@ function NavBar() {
           <Link to="/about">About</Link>
         </li>
         <li className="navList-item">
-          <Link to="/recommenadation">Recommendation</Link>
+          <Link to="/recommenadation">News</Link>
         </li>
-        <li className="navList-item">
-          <Link to="/signup">Signup</Link>
-        </li>
+       
         <li className="navList-item">
           <Link to="/login">Login</Link>
         </li>

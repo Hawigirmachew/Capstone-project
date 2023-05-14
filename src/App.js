@@ -1,13 +1,14 @@
-import { useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// components
+import { FaBars } from "react-icons/fa";
 // data
 import snapshot from "./utils/Data";
 import "./index.css";
-
+// components
 import NavBar from "./components/home/NavBar";
+// pages
 import Home from "./pages/Home";
-import About from './pages/About'
+import About from "./pages/About";
 // import { useState } from "react";
 function App() {
   // isLoading
@@ -44,27 +45,42 @@ function App() {
     );
   };
 
-  // popup
- 
+  // Responsive nav-bar
+  const navref = useRef();
+
+  const showMenu = () => {
+    navref.current.classList.toggle("responsive-nav");
+  };
+
   return (
     <BrowserRouter>
-    <NavBar/>
-     <main className="container">
-
-     <Routes>
-      <Route path="/" element = {<Home handleSearch= {handleSearch}
-      itemSearched = {itemSearched}
-      displaySearchItem={displaySearchItem}
-      itemFound={itemFound}
-      active={active}
-      options={options}
-      handleSelectedSnapshot={handleSelectedSnapshot}
-      snapshot={snapshot}
-      message={message}
-      />}/>
-      <Route path="/about" element = {<About />}/>
-     </Routes>
-     </main>
+      <header>
+        <NavBar navref={navref} />
+        <button className="nav-open" onClick={showMenu}>
+          <FaBars />
+        </button>
+      </header>
+      <main className="container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                handleSearch={handleSearch}
+                itemSearched={itemSearched}
+                displaySearchItem={displaySearchItem}
+                itemFound={itemFound}
+                active={active}
+                options={options}
+                handleSelectedSnapshot={handleSelectedSnapshot}
+                snapshot={snapshot}
+                message={message}
+              />
+            }
+          />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }

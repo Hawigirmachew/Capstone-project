@@ -1,14 +1,21 @@
-import React from 'react'
+import React from "react";
 
-function Popup({timePopup, setTimePopup}) {
+function Popup({ timePopup, setTimePopup }) {
   return timePopup ? (
-    <div className='popup'>
+    <div className="popup">
       <div className="inner-popup">
-        <p>Start searching for mountains by "mount then name of the mountain" </p>
-        <button className='popup-close' onClick={() => setTimePopup(false)}>close</button>
+        <p>
+          Enter "mount then name of the mountain" to begin your search for
+          mountains.
+        </p>
+        <button className="popup-close" onClick={() => setTimePopup(false)}>
+         X
+        </button>
       </div>
     </div>
-  ):""
+  ) : (
+    ""
+  );
 }
 
-export default Popup
+export default Popup;
