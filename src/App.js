@@ -9,6 +9,8 @@ import NavBar from "./components/home/NavBar";
 // pages
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 // import { useState } from "react";
 function App() {
   // isLoading
@@ -78,7 +80,10 @@ function App() {
               />
             }
           />
+
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
     </BrowserRouter>

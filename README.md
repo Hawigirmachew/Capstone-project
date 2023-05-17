@@ -1,40 +1,13 @@
-# Project setup
-- select use template and choose namee for your repo
-- clone the repository
-- cd to the repo
-- ```bash 
-  npm install
-```
-# Folder Structure
+# SnapShot
 
-**component** - this folder contain all small react component used to build a page
-
-**hooks** - include all custom hooks you write in this folder
-
-**pages** - include only page components here
-
-**utils** - common funcionality shared across the projects
-
-**assets** - include images,video and other static files here
+## Description
+This is a website, i try build by using react js. It have 5 webpages but i finished only the home page.
 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
+## Instructions how to install and run the project
+1. Fork this repository
+2. Clone the forked repository
+3. In order to include all the modules run `npm install` in command line.
+4. `npm run start` to run the code in your device 
+5. Commit and push
+6. Wait for pull request to be merged
