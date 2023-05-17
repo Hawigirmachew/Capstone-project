@@ -11,10 +11,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import News from "./pages/News";
 // import { useState } from "react";
 function App() {
-  // isLoading
-  // const [isLoading, setIsLoading] = useState(true)
+  
   //navigation buttons
   const options = [
     { id: 1, active: "all" },
@@ -82,10 +82,15 @@ function App() {
           />
 
           <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
+      <footer className="footer">
+        <p>Made with hawigirmachew</p>
+      </footer>
+
     </BrowserRouter>
   );
 }

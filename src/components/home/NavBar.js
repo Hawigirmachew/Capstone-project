@@ -22,7 +22,7 @@ function NavBar({ navref }) {
           <Link to="/about">About</Link>
         </li>
         <li className="navList-item">
-          <Link to="/recommenadation">News</Link>
+          <Link to="/news">News</Link>
         </li>
 
         <li className="navList-item">

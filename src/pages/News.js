@@ -1,11 +1,11 @@
 import React from 'react'
 
-function About() {
+function News() {
   return (
     <div>
-      About snapshot
+      News
     </div>
   )
 }
 
-export default About
+export default News

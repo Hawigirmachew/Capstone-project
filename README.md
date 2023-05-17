@@ -1,7 +1,7 @@
 # SnapShot
 
 ## Description
-This is a website, i try build by using react js. It have 5 webpages but i finished only the home page.
+This Snapshot App was created with React JS, HTML, and CSS. Users can look up various mountains, beaches, meals, and wildlife with this tool. 
 
 
 ## Instructions how to install and run the project
